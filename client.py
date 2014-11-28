@@ -14,7 +14,7 @@ Metodos = ['INVITE', 'BYE']
 
 try:
     # Metodo
-    METODO = sys.argv[1]
+    METODO = sys.argv[1].upper()
     # Información del receptor
     INFOR = sys.argv[2]
     PORT = int(sys.argv[2].split('@')[1].split(':')[1])
