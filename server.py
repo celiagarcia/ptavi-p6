@@ -38,14 +38,14 @@ class EchoHandler(SocketServer.DatagramRequestHandler):
 
                 # INVITE
                 elif Metodo == 'INVITE':
-                    envio = Sip + '100 TRYING' + '\r\n'
-                    envio += Sip + '180 RINGING' + '\r\n'
-                    envio += Sip + '200 OK' + '\r\n'
+                    envio = Sip + '100 TRYING' + '\r\n\r\n'
+                    envio += Sip + '180 RINGING' + '\r\n\r\n'
+                    envio += Sip + '200 OK' + '\r\n\r\n'
                     self.wfile.write(envio)
 
                 # BYE
                 elif Metodo == 'BYE':
-                    envio = Sip + '200 OK' + '\r\n'
+                    envio = Sip + '200 OK' + '\r\n\r\n'
                     self.wfile.write(envio)
 
                 # ACK
