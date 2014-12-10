@@ -29,7 +29,7 @@ except IndexError:
 
 # Contenido que vamos a enviar
 DIRECCION = INFOR.split(':')[0]
-LINE = METODO + ' sip:' + DIRECCION + ' SIP/2.0'
+LINE = METODO + ' sip:' + DIRECCION + ' SIP/2.0' + '\r\n'
 
 try:
     # Creamos el socket, lo configuramos y lo atamos a un servidor/puerto
@@ -37,7 +37,7 @@ try:
     my_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     my_socket.connect((SERVER_IP, PORT))
 
-    print "Enviando: " + LINE + '\r\n'
+    print "Enviando: " + LINE
     my_socket.send(LINE + '\r\n')
     data = my_socket.recv(1024)
 
